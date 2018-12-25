@@ -1,5 +1,5 @@
 fn main() {    
-    // Loop over iterator
+    // 在 迭代器(iterator) 上 循环
     let range = 0..10;
     for i in range {
         // ...

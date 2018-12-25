@@ -12,7 +12,7 @@
 
 ## `Serialize` & `Deserialize`
 
-使锈结构可串行化:
+使Rust结构可串行化:
 
 <pre><code data-source="chapters/shared/code/serde/1.rs" data-trim="hljs rust"></code></pre>
 

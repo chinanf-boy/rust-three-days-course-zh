@@ -12,11 +12,11 @@
 
 ---
 
-锈ABI是*不*稳定.
+RustABI是*不*稳定.
 
 ---
 
-锈支持platform-ABI.
+Rust支持platform-ABI.
 
 ---
 
@@ -34,7 +34,7 @@
 
 ---
 
-## 使用C从生锈
+## 使用C从生Rust
 
 ---
 
@@ -65,7 +65,7 @@ Hello world从C
 
 <pre><code data-source="chapters/shared/code/ffi/1.rs" data-trim="hljs rust"></code></pre>
 
-禁用一些生锈的命名的绑带
+禁用一些生Rust的命名的绑带
 
 <small>(在C代码)</small>
 
@@ -138,7 +138,7 @@ Hello world从C
 
 ## 真实的例子
 
-绑定imagemagick生锈!
+绑定imagemagick生Rust!
 
 <small>(有人已经做了,但让我们再做一次)</small>
 
@@ -170,7 +170,7 @@ Hello world从C
 
 ---
 
-## 包装不安全代码安全生锈
+## 包装不安全代码安全生Rust
 
 ---
 
@@ -186,7 +186,7 @@ Hello world从C
 
 ---
 
-## 利用C的生锈
+## 利用C的生Rust
 
 ---
 
@@ -228,7 +228,7 @@ Hello world从C
 
 <small>(不,这不是一个似曾相识的)</small>
 
-C代码需要`.h`文件包括定义防锈功能.
+C代码需要`.h`文件包括定义防Rust功能.
 
 `cbindgen`是一个很好的工具来自动生成它们.
 

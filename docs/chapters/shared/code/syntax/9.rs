@@ -1,4 +1,4 @@
-// &mut denotes a mutable borrow
+// &mut 表示为 一个 可变 借用
 fn accepts_borrow(thing: &mut u32) {
     *thing += 1
 }

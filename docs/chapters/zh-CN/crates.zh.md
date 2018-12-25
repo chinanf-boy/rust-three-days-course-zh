@@ -18,7 +18,7 @@ Rust调用库`crates`. 板条箱的管理通常通过以下方式完成`cargo`�
 
 ---
 
-在锈2018年,这不再需要.通过货物申报的图书馆可以简单地用于`use`-声明.
+在Rust2018年,这不再需要.通过货物申报的图书馆可以简单地用于`use`-声明.
 
 <pre><code data-source="chapters/shared/code/crates/1.rs" data-trim="hljs rust"></code></pre>
 

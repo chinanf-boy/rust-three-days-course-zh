@@ -1,12 +1,12 @@
-# 句法
+# 语法
 
 [回去](toc/default.html)
 
 ---
 
-Rust具有受函数语言影响的C风格的语法.
+Rust 具有受 C 风格的语法，函数语言的影响.
 
-具体的功能将在后面介绍.
+具体的函数将在后面介绍.
 
 ---
 
@@ -64,9 +64,9 @@ Rust具有受函数语言影响的C风格的语法.
 
 ---
 
-## 寿命
+## 生命周期
 
-`'foo`可以用来描述借款的寿命.
+`'foo`可以用来描述，借用项的生命周期.
 
 <pre><code data-source="chapters/shared/code/syntax/10.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
@@ -74,7 +74,7 @@ Rust具有受函数语言影响的C风格的语法.
 
 ## 作用域
 
-锈是块状的.范围可以返回值.
+Rust 是块状语言。区块可以返回值.
 
 <pre><code data-source="chapters/shared/code/syntax/11.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
@@ -90,7 +90,7 @@ Rust具有受函数语言影响的C风格的语法.
 
 <pre><code data-source="chapters/shared/code/syntax/13.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
-一般来说`where`语法优先.
+一般来说，`where`语法优先.
 
 ---
 
@@ -102,14 +102,14 @@ Rust具有受函数语言影响的C风格的语法.
 
 ## 属性
 
-Rust属性用于许多不同的事物.在[reference](https://doc.rust-lang.org/reference/attributes.html).
+Rust 属性用于许多不同的事物。全列表在[参考页面](https://doc.rust-lang.org/reference/attributes.zh.html).
 
 <pre><code data-source="chapters/shared/code/syntax/15.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
 ---
 
-## 分号上的
+## 分号
 
-没有分号的行隐式返回.别担心,如果你忘了,编译器会告诉你的.
+没有分号的行，隐式返回。别担心,如果你忘了,编译器会告诉你的.
 
 <pre><code data-source="chapters/shared/code/syntax/16.rs" data-trim="hljs rust" class="lang-rust"></code></pre>

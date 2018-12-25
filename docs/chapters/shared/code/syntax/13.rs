@@ -1,15 +1,15 @@
-// Inline syntax
+// 内敛 语法
 fn generic_inline<S: AsRef<str>>(thing: S) -> S {
     thing
 }
 
-// Where syntax
+// Where 语法
 fn generic_where<Stringish>(thing: Stringish) -> Stringish 
 where Stringish: AsRef<str> {
     thing
 }
 
-// Enums too!
+// 结构/枚举 一样写法!
 struct GenericStruct<A> {
     value: A,
 }

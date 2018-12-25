@@ -60,7 +60,7 @@ Rust提供了将函数绑定到类型的可能性.
 
 ## 自我
 
-`Self`是锈菌中的一种特殊类型.它总是引用实现引用的类型.
+`Self`是Rust菌中的一种特殊类型.它总是引用实现引用的类型.
 
 <pre><code data-source="chapters/shared/code/traits/3.rs" data-trim="hljs rust"></code></pre>
 

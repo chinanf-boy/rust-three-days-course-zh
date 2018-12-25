@@ -4,7 +4,7 @@
 
 ---
 
-货物是锈病的标准建造工具链.
+货物是Rust病的标准建造工具链.
 
 每次发布`rustc`装运的货物有特定的版本.
 
@@ -82,7 +82,7 @@
 
 ## 版本控制
 
-在锈蚀社区[Semantic Versioning](https://semver.org)是推荐的版本控制标准.
+在Rust蚀社区[Semantic Versioning](https://semver.org)是推荐的版本控制标准.
 
 -   如果有中断的接口更改,则必须引发主要版本.
 -   如果添加新特性,则必须引发次要版本

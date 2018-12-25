@@ -1,14 +1,14 @@
-# Installation of a toolchain
+# 安装工具链
 $ rustup install stable
-# Selection of a default toolchain
+# 选择默认工具链
 $ rustup default stable
-# Override the default toolchain in your directory
+# 覆盖目录中的默认工具链
 $ rustup override stable
-# Display documentation in browser
+# 在浏览器中显示文档
 $ rustup doc [--std]
-# List supported targets
+# 列出支持的目标
 $ rustup target list
-# Add and install a target to the toolchain
+# 添加目标并将其安装到工具链
 $ rustup target add <target>
-# List and add components
+# 列出并添加组件
 $ rustup component list|add

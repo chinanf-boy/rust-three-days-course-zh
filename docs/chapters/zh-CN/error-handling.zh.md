@@ -57,7 +57,7 @@
 ## 使用`?`在里面`main`
 
 -   `main`可以返回`Result`
--   自此生锈稳定`1.26`.
+-   自此生Rust稳定`1.26`.
 
 <pre><code data-source="chapters/shared/code/error-handling/6.rs" data-trim="hljs rust"></code></pre>
 

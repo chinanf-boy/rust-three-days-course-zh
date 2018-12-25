@@ -1,4 +1,4 @@
-# 有效锈蚀
+# 有效Rust蚀
 
 [回去](toc/default.html)
 
@@ -61,7 +61,7 @@
 ## 帮手
 
 -   GDB支持Rust,也支持签出`rust-gdb`
--   `valgrind`生锈效果好
+-   `valgrind`生Rust效果好
 -   [`afl.rs`](https://github.com/rust-fuzz/afl.rs)允许使用美国Fuzzy Lop进行模糊处理
 -   [`cargo-fuzz`](https://github.com/rust-fuzz/cargo-fuzz)使用`libfuzz`用于模糊
 -   [`cargo-kcov`](https://github.com/kennytm/cargo-kcov)能够处理代码覆盖

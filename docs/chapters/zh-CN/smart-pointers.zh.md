@@ -1,4 +1,4 @@
-# 锈蚀中的特殊指针
+# Rust蚀中的特殊指针
 
 [回去](toc/default.html)
 

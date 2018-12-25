@@ -1,4 +1,4 @@
-# 三天就'生锈'(Rust)
+# 三天就'生Rust'(Rust)
 
 - [概述](../index.html?chapter=overview&locale=zh-CN)
 - [安装](../index.html?chapter=installation&locale=zh-CN)

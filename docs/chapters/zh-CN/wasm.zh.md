@@ -102,11 +102,11 @@ WebAssembly仍然没有得到广泛的支持,并且有许多粗糙的边缘.
 
 ---
 
-# JS锈病
+# JSRust病
 
 ---
 
-## JS锈病
+## JSRust病
 
 导出用于Javascript的函数要复杂一些.
 
@@ -114,7 +114,7 @@ WebAssembly仍然没有得到广泛的支持,并且有许多粗糙的边缘.
 
 ---
 
-## JS锈病
+## JSRust病
 
 当前需要夜间频道来使这个功能正常工作:
 
@@ -122,7 +122,7 @@ WebAssembly仍然没有得到广泛的支持,并且有许多粗糙的边缘.
 
 ---
 
-## JS锈病
+## JSRust病
 
 <pre><code data-source="chapters/shared/code/wasm/12.bash" data-trim="hljs bash"></code></pre>
 
@@ -130,7 +130,7 @@ WebAssembly仍然没有得到广泛的支持,并且有许多粗糙的边缘.
 
 ---
 
-## JS锈病
+## JSRust病
 
 我们可以像以前一样使用Makefile.
 
@@ -138,7 +138,7 @@ WebAssembly仍然没有得到广泛的支持,并且有许多粗糙的边缘.
 
 ---
 
-## JS锈病
+## JSRust病
 
 这个`onRuntimeInitialized`钩子`Module`定义加载WebAssembly之后调用的内容.
 
@@ -146,7 +146,7 @@ WebAssembly仍然没有得到广泛的支持,并且有许多粗糙的边缘.
 
 ---
 
-## JS锈病
+## JSRust病
 
 运行`python -m SimpleHTTPServer`或者等同于,浏览`localhost:8000/site`并且打开控制台产生以下输出:
 
@@ -154,21 +154,21 @@ WebAssembly仍然没有得到广泛的支持,并且有许多粗糙的边缘.
 
 ---
 
-# 生锈的JS
+# 生Rust的JS
 
 ---
 
-## 生锈的JS
+## 生Rust的JS
 
 从Rust调用JS代码也有类似的复杂性.
 
-它主要通过传递`--js-library`在链接时间标志,这需要夜间通道生锈.
+它主要通过传递`--js-library`在链接时间标志,这需要夜间通道生Rust.
 
 传递数字相对比较简单,但是传递更复杂的东西(比如字符串)需要额外的努力.
 
 ---
 
-## 生锈的JS
+## 生Rust的JS
 
 返回Rust代码的字符串:
 
@@ -176,7 +176,7 @@ WebAssembly仍然没有得到广泛的支持,并且有许多粗糙的边缘.
 
 ---
 
-## 生锈的JS
+## 生Rust的JS
 
 调用Javascript函数:
 

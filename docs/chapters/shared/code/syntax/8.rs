@@ -1,5 +1,5 @@
 trait Bar {
-    // This can be overridden
+    // 这个可以被 覆盖
     fn default_implementation(&self) -> bool {
         true
     }

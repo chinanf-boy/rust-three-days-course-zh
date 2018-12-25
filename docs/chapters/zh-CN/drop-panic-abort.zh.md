@@ -53,7 +53,7 @@
 
 ## 恐慌
 
-生锈也有另一个错误机制:`panic!`
+生Rust也有另一个错误机制:`panic!`
 
 <pre><code data-source="chapters/shared/code/drop-panic-abort/2.rs" data-trim="hljs rust"></code></pre>
 
