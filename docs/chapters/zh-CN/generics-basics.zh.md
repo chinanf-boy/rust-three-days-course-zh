@@ -4,11 +4,11 @@
 
 ---
 
-泛型是Rust的基础.
+泛型是 Rust 的基本.
 
 ---
 
-## 类属结构
+## 泛型结构
 
 <pre><code data-source="chapters/shared/code/generics-basics/1.rs" data-trim="hljs rust"></code></pre>
 
@@ -16,35 +16,35 @@
 
 ## 类型推断
 
-Rust用足够的信息查找所有变量和泛型的类型.
+Rust 需要足够的信息，找到所有变量和泛型的类型.
 
-这仅适用*里面*关于函数极限.
+这仅适用于有限函数的*里部*.
 
 必须始终完整地输入签名.
 
 ---
 
-## 通用枚举
+## 泛型枚举
 
 <pre><code data-source="chapters/shared/code/generics-basics/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
 ---
 
-## 重要通用枚举
+## 下面，介绍下：重要泛型枚举
 
 ---
 
-## 选择权
+## Option
 
 <pre><code data-source="chapters/shared/code/generics-basics/3.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
 描述不必存在的值.
 
-`None`是一个值,不应该混淆`null`.
+`None`是一个值,不应该与`null`混淆.
 
 ---
 
-## 结果
+## Result
 
 <pre><code data-source="chapters/shared/code/generics-basics/4.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
@@ -52,13 +52,13 @@ Rust用足够的信息查找所有变量和泛型的类型.
 
 ---
 
-## 典型结果
+## 典型 Result
 
 <pre><code data-source="chapters/shared/code/generics-basics/5.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
 ---
 
-## 泛函
+## 泛型函数
 
 泛型函数具有类型参数.
 

@@ -8,15 +8,15 @@
 
 <small>(这是德国)</small>
 
-*»高效«C绑定*
+_»高效«C 绑定_
 
 ---
 
-RustABI是*不*稳定.
+RustABI 是*不*稳定.
 
 ---
 
-Rust支持platform-ABI.
+Rust 支持 platform-ABI.
 
 ---
 
@@ -26,7 +26,7 @@ Rust支持platform-ABI.
 
 ---
 
-*»高效«C绑定*
+_»高效«C 绑定_
 
 <br/>
 
@@ -34,17 +34,17 @@ Rust支持platform-ABI.
 
 ---
 
-## 使用C从生Rust
+## 使用 C 从生 Rust
 
 ---
 
 ## 基本的例子
 
-Hello world从C
+Hello world 从 C
 
 ---
 
-让我们假设你*真的*想要使用printf
+让我们假设你*真的*想要使用 printf
 
 <pre><code data-source="chapters/shared/code/ffi/hello.c" data-trim="hljs rust"></code></pre>
 
@@ -54,10 +54,10 @@ Hello world从C
 
 ## 事情待办事项
 
--   结合对函数在头
--   链接外部代码库
--   叫那些`unsafe { ... }`
--   为C函数转化数据
+- 结合对函数在头
+- 链接外部代码库
+- 叫那些`unsafe { ... }`
+- 为 C 函数转化数据
 
 ---
 
@@ -65,9 +65,9 @@ Hello world从C
 
 <pre><code data-source="chapters/shared/code/ffi/1.rs" data-trim="hljs rust"></code></pre>
 
-禁用一些生Rust的命名的绑带
+禁用一些生 Rust 的命名的绑带
 
-<small>(在C代码)</small>
+<small>(在 C 代码)</small>
 
 ---
 
@@ -83,10 +83,10 @@ Hello world从C
 
 一些编译器类型转换可以推导出的.
 
--   `c_uint`·以`u32`
--   `c_int`·以`i32`
--   `c_void`·以`()`
--   等……
+- `c_uint`·以`u32`
+- `c_int`·以`i32`
+- `c_void`·以`()`
+- 等……
 
 ---
 
@@ -96,11 +96,11 @@ Hello world从C
 
 ---
 
-## 货物(构建系统)支持
+## Cargo(构建系统)支持
 
--   通过构建依赖箱建立本地代码
-    -   `gcc`, `clang`, `cmake`,……
--   `build.rs`文件负责链接代码
+- 通过构建依赖箱建立本地代码
+  - `gcc`, `clang`, `cmake`,……
+- `build.rs`文件负责链接代码
 
 ---
 
@@ -138,7 +138,7 @@ Hello world从C
 
 ## 真实的例子
 
-绑定imagemagick生Rust!
+绑定 imagemagick 生 Rust!
 
 <small>(有人已经做了,但让我们再做一次)</small>
 
@@ -170,7 +170,7 @@ Hello world从C
 
 ---
 
-## 包装不安全代码安全生Rust
+## 包装不安全代码安全生 Rust
 
 ---
 
@@ -186,13 +186,13 @@ Hello world从C
 
 ---
 
-## 利用C的生Rust
+## 利用 C 的生 Rust
 
 ---
 
-作品simmilarly你已经看到.
+作品 simmilarly 你已经看到.
 
-使用逆向platform-ABI——发出本地库
+使用逆向 platform-ABI——发出本地库
 
 ---
 
@@ -200,7 +200,7 @@ Hello world从C
 
 ---
 
-## 货物的设置
+## Cargo 的设置
 
 <pre><code data-source="chapters/shared/code/ffi/12.toml" data-trim="hljs toml"></code></pre>
 
@@ -208,9 +208,9 @@ Hello world从C
 
 其他类似的概念.
 
--   `extern "C"`功能.
--   `#[repr(C)]`结构/枚举.
--   使数据C兼容.
+- `extern "C"`功能.
+- `#[repr(C)]`结构/枚举.
+- 使数据 C 兼容.
 
 ---
 
@@ -228,13 +228,13 @@ Hello world从C
 
 <small>(不,这不是一个似曾相识的)</small>
 
-C代码需要`.h`文件包括定义防Rust功能.
+C 代码需要`.h`文件包括定义防 Rust 功能.
 
 `cbindgen`是一个很好的工具来自动生成它们.
 
 ---
 
-但是:不是必需的,因为插件API通过指定weechat !
+但是:不是必需的,因为插件 API 通过指定 weechat !
 
 ---
 

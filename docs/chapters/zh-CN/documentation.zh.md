@@ -6,9 +6,9 @@
 
 ## `rustdoc`
 
-Rust提供了一个标准文档工具,称为`rustdoc`. 它通常通过以下方式使用`cargo doc`.
+Rust 提供了一个标准文档工具,称为`rustdoc`. 它通常通过以下方式使用`cargo doc`.
 
-因为这个Rust代码几乎总是以通用格式进行文档化.
+因为这个 Rust 代码几乎总是以通用格式进行文档化.
 
 ---
 
@@ -41,15 +41,15 @@ Rust提供了一个标准文档工具,称为`rustdoc`. 它通常通过以下方�
 
 这个页面记录了`vec`模块.
 
-它从一些示例开始,然后列出`struct`模块导出的s、特征或函数.
+它从一些示例开始,然后列出`struct`模块导出的 s、特征或函数.
 
 ---
 
 ## 它是如何产生的?
 
-`rustdoc`可以读取Rust代码和Markdown文档.
+`rustdoc`可以读取 Rust 代码和 Markdown 文档.
 
-`//!`和`///`注释读作Markdown.
+`//!`和`///`注释读作 Markdown.
 
 <pre><code data-source="chapters/shared/code/documentation/2.rs" data-trim="hljs rust"></code></pre>
 
@@ -103,7 +103,7 @@ fn serve() -> ! { loop {} }
 
 ---
 
-## 货物一体化
+## Cargo 一体化
 
 此命令构建并打开当前项目的文档:
 

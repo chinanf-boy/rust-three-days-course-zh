@@ -1,20 +1,20 @@
-# 发送与同步
+# Send & Sync
 
 [回去](toc/default.html)
 
 ---
 
-对于并发语义,Rust有两个特殊特性.
+对于并发语义,Rust 有两个特殊 traits.
 
--   `Send`标记一个安全的结构*发送*线程之间.
--   `Sync`标记一个安全的结构*分享*线程之间.
-    -   (`&T`是`Send`)
+- `Send`在线程之间，标记一个安全的结构*发送*.
+- `Sync`在线程之间，标记一个安全的结构*分享*.
+  - (`&T`是`Send`)
 
 ---
 
-Rust使用这些特性来防止数据竞争.
+Rust 使用这些特性来防止数据竞争.
 
-他们是*自动导出*如果合适,适用于所有类型.
+如果合适，他们是为所有类型*自动派生*,.
 
 ---
 
@@ -24,9 +24,9 @@ Rust使用这些特性来防止数据竞争.
 
 ---
 
-有一些值得注意的类型不是`Send`或`Sync`.
+有一些值得注意的类型，不是`Send`或`Sync`.
 
-如`Rc`原始指针`UnsafeCell`.
+而是如`Rc`，原始指针，`UnsafeCell`.
 
 ---
 
@@ -42,9 +42,9 @@ Rust使用这些特性来防止数据竞争.
 
 ---
 
-## 实施
+## 实现中
 
-可以添加`Send`和`Sync`一种类型.
+可以添加`Send`和`Sync`实现给一种类型.
 
 <pre><code data-source="chapters/shared/code/send-and-sync/4.rs" data-trim="hljs rust"></code></pre>
 
@@ -54,13 +54,13 @@ Rust使用这些特性来防止数据竞争.
 
 ## 关系
 
-如果一个类型实现了这两者`Sync`和`Copy`然后它也可以实现`Send`.
+如果一个类型实现了`Sync`和`Copy`这两者， 那么它也可以实现`Send`.
 
 ---
 
 ## 关系
 
-一种`&T`可以实现`Send`如果类型`T`也实现`Sync`.
+一种`&T`可以实现`Send`，若类型`T`也实现`Sync`.
 
 <pre><code data-source="chapters/shared/code/send-and-sync/5.rs" data-trim="hljs rust"></code></pre>
 
@@ -68,7 +68,7 @@ Rust使用这些特性来防止数据竞争.
 
 ## 关系
 
-一种`&mut T`可以实现`Send`如果类型`T`也实现`Send`.
+一种`&mut T`可以实现`Send`，若类型`T`也实现`Send`.
 
 <pre><code data-source="chapters/shared/code/send-and-sync/6.rs" data-trim="hljs rust"></code></pre>
 
@@ -76,14 +76,14 @@ Rust使用这些特性来防止数据竞争.
 
 ## 后果
 
-有`Send`和`Sync`?
+`Send`和`Sync`的后果是什么?
 
 ---
 
 ## 后果
 
-在类型系统级别上携带此信息允许将数据竞争bug降低到*编译时间*水平.
+在类型系统级别上携带此信息，会让数据竞争 bug 降低到*编译时间*水平。
 
 防止这个错误类到达生产系统.
 
-`Send`和`Sync`独立于并发选择(异步、线程等).
+`Send`和`Sync`是独立于并发的选择(异步、线程等).

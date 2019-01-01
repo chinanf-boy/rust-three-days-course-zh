@@ -1,4 +1,4 @@
-# 易变性
+# 可变性
 
 [回去](toc/default.html)
 
@@ -6,30 +6,30 @@
 
 现代编程语言对数据可变性的态度不同.
 
-Rust在哪里落地?
+Rust又是如何呢?
 
 ---
 
-## 一个例子
+## 一个错误例子
 
 <pre><code data-source="chapters/shared/code/mutability/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
 ---
 
-## 对的
+## 这样才对
 
 <pre><code data-source="chapters/shared/code/mutability/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
 ---
 
-在Rust中,必须声明数据可变性.
+在Rust中,必须声明数据，为可变的(`mut`).
 
-通过读取代码,易变性总是显而易见的.
-
----
-
-变异性是Rust病的根本,也是普遍的考虑因素.
+读取代码，哪些是可变性，就显而易见了.
 
 ---
 
-可变性是变量和绑定的属性,而不是绑定数据的属性!
+可变性是Rust的基础，也是普遍要考虑的因素.
+
+---
+
+可变性是变量和引用的属性，而不是绑定数据的属性!

@@ -1,4 +1,4 @@
-# 有效Rust蚀
+# 有效 Rust 蚀
 
 [回去](toc/default.html)
 
@@ -6,7 +6,7 @@
 
 ## 遍历器
 
-习惯Iterator-API并使用它们!
+习惯 Iterator-API 并使用它们!
 
 迭代器经过大量优化,尤其是它们的组合.
 
@@ -26,7 +26,7 @@
 
 ## 编译时代
 
-`rustc`它不是最快的编译器,在LLVM中花费大量时间用于代码生成和优化.
+`rustc`它不是最快的编译器,在 LLVM 中花费大量时间用于代码生成和优化.
 
 `cargo check`只运行类型检查,不编译代码.
 
@@ -38,9 +38,9 @@
 
 ## 优化二进制大小
 
--   使用系统分配器(夜间特性)
--   如果少用libstd,则可以替换它
--   减少单态化函数调用的数量
+- 使用系统分配器(夜间特性)
+- 如果少用 libstd,则可以替换它
+- 减少单态化函数调用的数量
 
 ---
 
@@ -54,14 +54,14 @@
 
 <pre><code data-source="chapters/shared/code/effective-rust/2.rs" data-trim="hljs rust"></code></pre>
 
-在图书馆内嵌.
+在库内嵌.
 
 ---
 
 ## 帮手
 
--   GDB支持Rust,也支持签出`rust-gdb`
--   `valgrind`生Rust效果好
--   [`afl.rs`](https://github.com/rust-fuzz/afl.rs)允许使用美国Fuzzy Lop进行模糊处理
--   [`cargo-fuzz`](https://github.com/rust-fuzz/cargo-fuzz)使用`libfuzz`用于模糊
--   [`cargo-kcov`](https://github.com/kennytm/cargo-kcov)能够处理代码覆盖
+- GDB 支持 Rust,也支持签出`rust-gdb`
+- `valgrind`生 Rust 效果好
+- [`afl.rs`](https://github.com/rust-fuzz/afl.rs)允许使用美国 Fuzzy Lop 进行模糊处理
+- [`cargo-fuzz`](https://github.com/rust-fuzz/cargo-fuzz)使用`libfuzz`用于模糊
+- [`cargo-kcov`](https://github.com/kennytm/cargo-kcov)能够处理代码覆盖

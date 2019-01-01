@@ -1,22 +1,22 @@
-# 遍历器
+# 迭代器(Iterators)
 
 [回去](toc/default.html)
 
 ---
 
-Rust迭代器是:
+Rust 迭代器是:
 
--   懒惰
--   普遍的
--   潜在无限
+- 懒惰
+- 普遍的
+- 潜力无限
 
 ---
 
 ## 它们来自哪里?
 
--   收藏品`Vec<T>`有一个`iter()`产生迭代器的函数.
--   诸如此类`std::net::TcpListener`它提供了`TcpStream`S通过`incoming()`.
--   迭代器也可以在其他结构上实现.
+- 集合`Vec<T>`有一个`iter()`，这是个可产生迭代器的函数.
+- 诸如`std::net::TcpListener`，它通过`incoming()`提供了`TcpStreams`的迭代器.
+- 迭代器也可以在其他结构上实现.
 
 ---
 
@@ -26,7 +26,7 @@ Rust迭代器是:
 
 ## `next()`
 
-可以手动进行迭代器:
+可以手动推动迭代器:
 
 <pre><code data-source="chapters/shared/code/iterators/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
@@ -34,7 +34,7 @@ Rust迭代器是:
 
 ## `map()`
 
-在评估项目时对其进行转换:
+在执行 items 时，对每个 item 进行转换:
 
 <pre><code data-source="chapters/shared/code/iterators/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
@@ -78,10 +78,10 @@ Rust迭代器是:
 
 ---
 
-## 果茶
+## 果茶(Gotcha)
 
 这行不通:
 
 <pre><code data-source="chapters/shared/code/iterators/8.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
-为什么?(考虑范围和所有权!)
+为什么?(考虑下范围和所有权!)

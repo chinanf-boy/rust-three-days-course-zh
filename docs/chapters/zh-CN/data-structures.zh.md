@@ -4,7 +4,7 @@
 
 ---
 
-## 结构体
+## 结构体(Structs)
 
 ---
 
@@ -20,19 +20,19 @@
 
 ---
 
-## 旁白
+## 旁白助攻
 
-在调用`Point::new()`而不是原始的分配.
+常用做法，应该是将分配调用，藏在`Point::new()`函数，而不是直接的原始分配.
 
 ---
 
-## 现场访问
+## 字段访问
 
 <pre><code data-source="chapters/shared/code/data-structures/3.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
 ---
 
-## 多元组
+## 元组
 
 <pre><code data-source="chapters/shared/code/data-structures/4.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
@@ -48,7 +48,7 @@
 
 <pre><code data-source="chapters/shared/code/data-structures/6.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
-Enum的不同选择称为"变体".
+Enum 的不同选择称为"变体(variants)".
 
 ---
 
@@ -70,6 +70,6 @@ Enum的不同选择称为"变体".
 
 ---
 
-## 有各种型号的吗?
+## 有其他变种类型吗?
 
-不,现在不行!
+不,现在没有!

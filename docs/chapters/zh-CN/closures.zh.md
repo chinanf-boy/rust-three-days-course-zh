@@ -4,14 +4,14 @@
 
 ---
 
-Rust有闭塞.多重的,偶数的
+Rust 有闭包。甚至是 多样的
 
--   **优势:**只使用绝对必要的运行时资源进行高度优化,通常没有.
--   **缺点:**了解特定的闭包类型并不总是容易的.
+- **优势:**高度的优化，只使用绝对必要的运行时资源，大多数情况下甚至没有.
+- **缺点:**了解特定的闭包类型，并不总是容易的.
 
 ---
 
-## 记数法
+## 记住啦
 
 <pre><code data-source="chapters/shared/code/closures/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
@@ -19,19 +19,19 @@ Rust有闭塞.多重的,偶数的
 
 ---
 
-## 闭合类型
+## 闭包类型
 
-弗内斯
+FnOnce
 
--   闭包消耗其环境
+- 消耗其环境的闭包
 
-FnMut 
+FnMut
 
--   闭包改变了它的环境
+- 获取可变的借用值所以可以改变其环境
 
 Fn
 
--   闭包以不变的方式引用其环境.
+- 从其环境获取不可变的借用值.
 
 ---
 
@@ -39,7 +39,7 @@ Fn
 
 ---
 
-闭包类型之间的关系是:Fn是超性状FnMut,FnMut是FnOnce的超性状.
+闭包类型之间的关系是: Fn 是一个 不变的 FnMut,FnMut 是 FnOnce 的 supertrait.
 
 ---
 
@@ -49,8 +49,8 @@ Fn
 
 ---
 
-## 移动和结束
+## 移动和闭包
 
-由于闭包环境是隐式的,所以将类型移动到闭包中是显式的.
+由于闭包环境是隐式的,所以将类型移动到闭包中，是应显式表示的.
 
 <pre><code data-source="chapters/shared/code/closures/4.rs" data-trim="hljs rust"></code></pre>

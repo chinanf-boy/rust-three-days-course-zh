@@ -1,38 +1,38 @@
-# 货物
+# Cargo
 
 [回去](toc/default.html)
 
 ---
 
-货物是Rust病的标准建造工具链.
+Cargo 是 Rust 标准 的构建工具链.
 
-每次发布`rustc`装运的货物有特定的版本.
+每次`rustc`的发布都，装运有 Cargo 的特定版本.
 
-一般来说,货物独立于使用的`rustc`版本.
+一般来说,Cargo 的版本与你使用的`rustc`版本是分开的.
 
 ---
 
 ## 项目
 
-货物项目包含(至少):
+Cargo 项目包含(至少):
 
--   单据(货单)
--   在`src`文件夹(默认)
-
----
-
-此外,货物项目可以包括:
-
--   测试(默认目录)`tests`)
--   基准(默认目录)`benches`)
--   构建脚本(默认)`build.rs`)
--   示例(默认目录)`examples`)
+- 一个清单(Cargo.toml)
+- 在`src`文件夹的一个源文件(默认目录)
 
 ---
 
-## 舱单
+此外,Cargo 项目可以包括:
 
-这个[Cargo-Manifest](http://doc.crates.io/manifest.html)使用[TOML](http://doc.crates.io/manifest.html). 它至少包含项目的名称.
+- 测试(默认目录)`tests`)
+- 基准(默认目录)`benches`)
+- 构建脚本(默认文件)`build.rs`)
+- 示例(默认目录)`examples`)
+
+---
+
+## 清单
+
+这个[Cargo-清单](http://doc.crates.io/manifest.html)使用[TOML](http://doc.crates.io/manifest.html)格式。 它至少包含项目的名称.
 
 <pre><code data-source="chapters/shared/code/cargo/1.toml" data-trim="hljs toml"></code></pre>
 
@@ -40,15 +40,15 @@
 
 ## `cargo build`
 
-`cargo build`构建整个项目并将结果放到目录中`target`.
+`cargo build`构建整个项目，并将结果放到`target`目录中.
 
-默认情况下,cargo使用Debug配置文件,这意味着生成的二进制文件没有经过优化,并且带有调试符号!
+默认情况下,cargo 使用 Debug(调试)配置文件,这意味着生成的二进制文件没有经过优化,并且带有调试符号!
 
-`cargo build --release`使用优化配置文件.
+`cargo build --release`就会使用优化的配置文件.
 
 ---
 
-*总是使用* `--release`对于基准测试,尤其是迭代器从优化中获得了巨大的速度提升.
+基准测试 _应使用_ `--release`命令参数，尤其是对于迭代器，可从优化中获得了巨大的速度提升。
 
 ---
 
@@ -56,9 +56,9 @@
 
 如果项目包含应用程序,则可以使用`cargo run -- [Arguments]`.
 
-如果包含多个,则可以使用`--bin <name>`.
+如果包含多个,则可以使用`--bin <name>`，给予独立的二进制名.
 
-调试配置文件在这里是默认的.
+在这里是默认的调试配置.
 
 ---
 
@@ -66,9 +66,9 @@
 
 `cargo test`运行所有测试.您可以提供测试名称或模块名称来筛选正在运行的测试.
 
-测试默认情况下使用调试配置文件.
+测试默认情况下，使用调试配置文件.
 
-`cargo test`运行所有测试,包括文档测试和示例编译!
+`cargo test`运行所有测试,包括文档和示例编译的测试!
 
 ---
 
@@ -76,53 +76,56 @@
 
 `cargo bench`运行所有基准测试.
 
-基准测试默认为发布配置文件.
+基准测试默认为发布(release)配置文件.
 
 ---
 
 ## 版本控制
 
-在Rust蚀社区[Semantic Versioning](https://semver.org)是推荐的版本控制标准.
+在 Rust 社区，[Semantic 版本语法](https://semver.org)是推荐的版本控制标准.
 
--   如果有中断的接口更改,则必须引发主要版本.
--   如果添加新特性,则必须引发次要版本
--   补丁版本标志着bug修复和性能改进.
+- 如果有重大的(API)接口更改,则必须引发主要(major)版本.
+- 如果添加新特性,则必须引发次要(minor)版本
+- 补丁(patch)版本标志着 bug 修复和性能改进.
+
+> `1.2.3` >> `1`为 major `2`为 minor，`3`为 patch
+> 少写的，以 major 为开头
 
 ---
 
-## 预释放
+## 预发布
 
-如果库的版本如下`1`它被认为是"预发布",这意味着,在*每个小版本*.
+如果库的版本小于`1`，它被认为是"预发布",这意味着,在*每个小版本*都有可能发生(API)接口更改.
 
 ---
 
 ## 版本表达式
 
-Cargo允许以不同方式表达版本范围.
+Cargo 允许以不同方式表达版本范围.
 
--   `=1.2.3`确切的说,货物只使用那个
--   `0.1`"0.1"系列的任何补丁版本
--   `< 0.8`任何小于"0.8"的次要版本
+- `=1.2.3`：确切的说,Cargo 只使用这版本
+- `0.1`："0.1"系列下的任何补丁(patch)版本
+- `< 0.8`：任何小于"0.8"的次要(minor)版本
 
-有关详细信息,请查看[docs](http://doc.crates.io/manifest.html)
+有关详细信息,请查看[文档](http://doc.crates.io/manifest.html)
 
 ---
 
 ## 版本解析
 
-在第一次构建时(或`cargo update`(cargo)计算满足Cargo.toml中所述约束的版本树.如果成功,它将保存在Lockfile(Cargo.lock)中.
+在第一次构建(或`cargo update`)时，cargo 计算满足于 Cargo.toml 中，所述约束的版本树。如果成功,它将保存在 Lockfile(Cargo.lock)中.
 
-建议始终将Lockfile置于版本控制之下!(用于可重复构建)
+建议，始终将 Lockfile 置于版本控制之下!(用于可重复构建)
 
 ---
 
 ## 详细依赖关系
 
-货物有三种不同的依赖关系:
+Cargo 有三种不同的依赖关系:
 
--   正常依赖
--   构建依赖项
--   测试依赖性
+- 正常依赖项
+- 构建(build)依赖项
+- 测试(test)依赖项
 
 ---
 
@@ -140,48 +143,48 @@ Cargo允许以不同方式表达版本范围.
 
 ---
 
-## 旁白
+## 旁白有话
 
-如果图书馆要在.es.io上出版,则禁止在.es.io之外的附属机构.
+如果要在 crates.io 上发布的箱，则禁止依赖在 crates.io 之外的机构(/注册表).
 
 ---
 
-## 局部路径
+## 本地路径
 
-通过本地图书馆可以临时替换图书馆.为此,需要注册它们的路径`$PROJECT_PATH/.cargo/config`.
+通过本地箱可以临时替换 箱。为此,需要注册它们的路径`$PROJECT_PATH/.cargo/config`.
 
 <pre><code data-source="chapters/shared/code/cargo/5.toml" data-trim="hljs toml"></code></pre>
 
-这里找到的图书馆优先.这允许对补丁进行简单的测试.
+这里，以找到的箱优先。这允许对补丁版本进行简单的测试.
 
 ---
 
-## 轮廓
+## Profiles(配置文件)
 
-可以定制货物配置文件(释放、工作台、测试…).在[Manifest-documentation](http://doc.crates.io/manifest.html)
-
----
-
-## 目标
-
--   可以基于编译目标配置概要文件和依赖项
--   `cargo build --target ...`使用该目标
--   必须预先安装目标
--   考虑使用xargo
+可以定制 Cargo 配置文件(release, bench, test...)，在[Manifest-文档中](http://doc.crates.io/manifest.html)
 
 ---
 
-## 工作空间
+## 目标(target)
 
-货物可以将工作区中的多个项目分组.然后它们共享设置以及相同的设置`target`目录.
-
-见[manifest documentation](http://doc.crates.io/manifest.html)详情.
+- 可以基于编译目标，配置 profiles 和依赖项
+- `cargo build --target ...`会使用该目标
+- 必须预先安装目标
+- 考虑使用 xargo
 
 ---
 
-## 特征
+## 工作区
 
-`rustc`提供在编译时忽略某些代码部分的能力.这是通过特性标志实现的.
+Cargo 可以将工作区中的多个项目分组。然后，它们能共享设置以及相同的`target`目录.
+
+见[manifest 稳定](http://doc.crates.io/manifest.html)详情.
+
+---
+
+## 特性
+
+`rustc`提供在编译时，忽略某些代码部分的能力。这是通过特性标志实现的.
 
 <pre><code data-source="chapters/shared/code/cargo/6.rs" data-trim="hljs rust"></code></pre>
 
@@ -193,7 +196,7 @@ Cargo允许以不同方式表达版本范围.
 
 ---
 
-然后表示依赖关系:
+也可以，在一个依赖项中表明:
 
 <pre><code data-source="chapters/shared/code/cargo/8.toml" data-trim="hljs toml"></code></pre>
 
@@ -201,4 +204,4 @@ Cargo允许以不同方式表达版本范围.
 
 ## 直接调用`rustc`
 
-`cargo rustc`调用`rustc`直接并允许传递附加参数.
+`cargo rustc`直接调用`rustc`，并允许传递附加参数.
