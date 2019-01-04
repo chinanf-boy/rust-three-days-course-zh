@@ -4,7 +4,9 @@
 
 ---
 
-## **塞尔**I化与**扩散系数**串行化
+## **Ser**ialization 和 **De**serialization
+
+序列化和反序列化
 
 <https://serde.rs/>
 
@@ -12,7 +14,7 @@
 
 ## `Serialize` & `Deserialize`
 
-使Rust结构可串行化:
+使 Rust 结构 (反)序列化:
 
 <pre><code data-source="chapters/shared/code/serde/1.rs" data-trim="hljs rust"></code></pre>
 
@@ -20,23 +22,23 @@
 
 ## 格式
 
-Serde支持多种格式,例如:
+Serde 支持多种格式,例如:
 
--   杰森
--   CBOR
--   钇铝石榴石
--   托姆尔
--   BSON
--   梅塞格帕克
--   …更多!
+- JSON
+- CBOR
+- YAML
+- TOML
+- BSON
+- MessagePack
+- …更多!
 
-你喜欢那个缩略词沙拉吗?
+你喜欢哪款沙拉呢?
 
 ---
 
 ## `Serialize`
 
-对JSON:
+到 JSON:
 
 <pre><code data-source="chapters/shared/code/serde/2.rs" data-trim="hljs rust"></code></pre>
 
@@ -44,7 +46,7 @@ Serde支持多种格式,例如:
 
 ## `Deserialize`
 
-来自JSON:
+来自 JSON:
 
 <pre><code data-source="chapters/shared/code/serde/3.rs" data-trim="hljs rust"></code></pre>
 

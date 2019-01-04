@@ -1,10 +1,10 @@
-# 串
+# Strings
 
 [回去](toc/default.html)
 
 ---
 
-Rust中有几种不同的弦.
+Rust 中有几种不同的 字符串.
 
 最常见的是`String`和`&str`.
 
@@ -12,102 +12,102 @@ Rust中有几种不同的弦.
 
 ## `String`
 
--   *拥有*它存储的数据,并且可以自由地进行变异.
--   作为指向一些字节、长度和容量的指针存在.
--   存在于*堆*.
--   不执行`Copy`但是实现`Clone`.
+- *拥有*它存储的数据,并且可以自由地进行改变.
+- 作为指向一些字节、长度和容量的 **指针** 而存在.
+- 存在于*堆*.
+- 不实现`Copy`，但是实现了`Clone`.
 
 ---
 
 ## `&str`
 
--   对字符串片的不可变引用.
--   只看作借来的价值.
--   可以在堆、堆栈或程序内存中的任何位置.
+- 对字符串切片的不可变引用.
+- 只看作借用的值.
+- 可以在堆、栈或程序内存中的任何位置.
 
 ---
 
-## 创造
+## 创建
 
 <pre><code data-source="chapters/shared/code/strings/1.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
 ---
 
-## 什么时候使用什么?
+## 什么时候使用哪个?
 
--   `String`是*最容易的*出发时使用.再细化.
--   `String`拥有它的数据,因此它和`struct`或枚举.
+- `String`是出发时*最容易的*用法，后面再细化.
+- `String`拥有它的数据,因此它可以是`struct`或枚举的一个字段.
 
--   `&'static str`对于常数值工作良好.
--   `&str`通常在函数参数中使用.
+- `&'static str`对常量值，工作良好.
+- `&str`通常在函数参数中使用.
 
 ---
 
 ## `Deref`强制
 
-仅仅因为存在多种类型并不意味着它们不能和谐工作.
+仅仅因为存在多种类型，并不意味着它们不能和谐工作.
 
 <pre><code data-source="chapters/shared/code/strings/2.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
-这是因为`String`S实现`Deref<Target=str>`.
+这就是因为`String` 实现了`Deref<Target=str>`.
 
 ---
 
 ## 异国字符串类型
 
--   `OsStr`和`OsString`在使用文件系统或系统调用时可能出现.
+- `OsStr`和`OsString`在使用文件系统或系统调用时可能出现.
 
--   `CStr`和`CString`在与FFI一起工作时可能会出现.
+- `CStr`和`CString`在与 FFI 一起工作时，可能会出现.
 
-之间的区别`*Str`和`*String`一般与正常类型相同.
+`*Str`和`*String`之间的区别，一般与正常类型相同.
 
 ---
 
 ## `OsString` & `OsStr`
 
-这些类型表示*平台本土*串.这是必要的,因为Unix和Windows字符串具有不同的特征.
+这些类型表示*原生平台*字符串。这是必要的,因为 Unix 和 Windows 字符串具有不同的特征.
 
 ---
 
-## 背后`OsString`场景
+## `OsString`场景下
 
--   Unix字符串通常是任意的非零序列,通常解释为UTF-8.
--   Windows字符串通常是任意的非零序列,通常解释为UTF-16.
--   Rust色字符串总是有效的UTF-8,并且可能包含零.
+- Unix 字符串通常是任意的非零序列,通常解释为 UTF-8.
+- Windows 字符串通常是任意的非零序列,通常解释为 UTF-16.
+- Rust 字符串总是有效的 UTF-8,并且可能包含零.
 
-`OsString`和`OsStr`弥合这一差距,允许廉价的往返转换`String`和`str`.
+`OsString`和`OsStr`弥合这一差距,允许廉价的`String`和`str`往返转换.
 
 ---
 
 ## `CString` & `CStr`
 
-这些类型表示有效的C兼容字符串.
+这些类型表示有效的 C 兼容字符串.
 
-当使用外部代码进行FFI时,它们主要被使用.
+主要被外部代码进行 FFI 时使用.
 
-强烈建议您阅读*全部的*使用这些类型之前的文档.
+强烈建议您使用这些类型之前，阅读*全部的*文档.
 
 ---
 
-## 公共字符串任务
+## 常见字符串任务
 
-分裂:
+Split:
 
 <pre><code data-source="chapters/shared/code/strings/3.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
 ---
 
-## 公共字符串任务
+## 常见字符串任务
 
-级联:
+Concat:
 
 <pre><code data-source="chapters/shared/code/strings/4.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
 ---
 
-## 公共字符串任务
+## 常见字符串任务
 
-替换:
+Replace:
 
 <pre><code data-source="chapters/shared/code/strings/5.rs" data-trim="hljs rust" class="lang-rust"></code></pre>
 
@@ -115,6 +115,6 @@ Rust中有几种不同的弦.
 
 ## 接受`String`或`str`
 
-可以毫不痛苦地接受:
+可以毫不痛苦地接受两者:
 
 <pre><code data-source="chapters/shared/code/strings/6.rs" data-trim="hljs rust" class="lang-rust"></code></pre>

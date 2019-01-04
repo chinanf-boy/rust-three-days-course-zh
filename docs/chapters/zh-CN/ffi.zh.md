@@ -8,11 +8,11 @@
 
 <small>(这是德国)</small>
 
-_»高效«C 绑定_
+_»高效 C 绑定库«_
 
 ---
 
-RustABI 是*不*稳定.
+Rust ABI 是*不*稳定.
 
 ---
 
@@ -20,13 +20,13 @@ Rust 支持 platform-ABI.
 
 ---
 
-与共享/静态库.
+能与共享/静态库交互.
 
-或*是*一个.
+或*是*其中一个.
 
 ---
 
-_»高效«C 绑定_
+_»高效 C 绑定库«_
 
 <br/>
 
@@ -34,17 +34,17 @@ _»高效«C 绑定_
 
 ---
 
-## 使用 C 从生 Rust
+## 从 Rust 使用 C
 
 ---
 
 ## 基本的例子
 
-Hello world 从 C
+C 语言的 Hello world
 
 ---
 
-让我们假设你*真的*想要使用 printf
+让我们假设你*真的*想要使用 `printf`
 
 <pre><code data-source="chapters/shared/code/ffi/hello.c" data-trim="hljs rust"></code></pre>
 
@@ -52,11 +52,11 @@ Hello world 从 C
 
 ---
 
-## 事情待办事项
+## 要做的事项
 
-- 结合对函数在头
+- 在 header 中 结合函数
 - 链接外部代码库
-- 叫那些`unsafe { ... }`
+- 用`unsafe { ... }`调用它们
 - 为 C 函数转化数据
 
 ---
@@ -65,13 +65,13 @@ Hello world 从 C
 
 <pre><code data-source="chapters/shared/code/ffi/1.rs" data-trim="hljs rust"></code></pre>
 
-禁用一些生 Rust 的命名的绑带
+禁用一些生 Rust 的命名限制
 
-<small>(在 C 代码)</small>
+<small>(在 C 代码 很常见)</small>
 
 ---
 
-## 绑定功能
+## 绑定函数
 
 <pre><code data-source="chapters/shared/code/ffi/hello.h" data-trim="hljs rust"></code></pre>
 
@@ -81,7 +81,7 @@ Hello world 从 C
 
 ## 原始类型
 
-一些编译器类型转换可以推导出的.
+一些类型转换可以由编译器推导出的.
 
 - `c_uint`·以`u32`
 - `c_int`·以`i32`
@@ -98,15 +98,15 @@ Hello world 从 C
 
 ## Cargo(构建系统)支持
 
-- 通过构建依赖箱建立本地代码
+- 通过 build-dependency 箱，建立原生代码
   - `gcc`, `clang`, `cmake`,……
 - `build.rs`文件负责链接代码
 
 ---
 
-## 结构体
+## 结构
 
-枚举和结构的布局是由编译器.
+枚举和结构的布局由编译器负责.
 
 `#[repr(C)]`指导编译器使用平台布局.
 
@@ -130,7 +130,7 @@ Hello world 从 C
 
 ## 回调
 
-`extern "C"`也适用于函数指针给外面的功能.
+`extern "C"`也适用于，将函数指针给外面的函数.
 
 <pre><code data-source="chapters/shared/code/ffi/6.rs" data-trim="hljs rust"></code></pre>
 
@@ -138,7 +138,7 @@ Hello world 从 C
 
 ## 真实的例子
 
-绑定 imagemagick 生 Rust!
+绑定 imagemagick 到 Rust!
 
 <small>(有人已经做了,但让我们再做一次)</small>
 
@@ -146,13 +146,13 @@ Hello world 从 C
 
 ## bindgen
 
-`imagemagick`有一个*很多*的功能.`extern "C"`不要写这些
+`imagemagick`有一个*很多*的函数。不要自己写所有这些`extern "C"` - 生成他们
 
 <pre><code data-source="chapters/shared/code/ffi/7.rs" data-trim="hljs rust"></code></pre>
 
 ---
 
-在这一点上,包括绑定很简单\*
+在这一点上,包括 bindings 很简单\*
 
 <pre><code data-source="chapters/shared/code/ffi/8.rs" data-trim="hljs rust"></code></pre>
 
@@ -164,13 +164,13 @@ Hello world 从 C
 
 ---
 
-## 建筑层
+## 建筑层级
 
 <pre><code data-source="chapters/shared/code/ffi/10.rs" data-trim="hljs rust"></code></pre>
 
 ---
 
-## 包装不安全代码安全生 Rust
+## 在安全 Rust 中包装不安全代码
 
 ---
 
@@ -180,23 +180,23 @@ Hello world 从 C
 
 ---
 
-**结构体与一个字段在运行时消失.**
+**结构的一个字段在运行时消失.**
 
-隔离的生命周期管理从其余的代码的指针.
-
----
-
-## 利用 C 的生 Rust
+剩下的代码，隔离生命周期管理的指针.
 
 ---
 
-作品 simmilarly 你已经看到.
-
-使用逆向 platform-ABI——发出本地库
+## C 中使用 Rust
 
 ---
 
-## 例如:插件`weechat`
+像你已经看到的那样工作。
+
+使用逆向 platform-ABI - 发出一个原生库
+
+---
+
+## 例如:`weechat`的插件
 
 ---
 
@@ -208,7 +208,7 @@ Hello world 从 C
 
 其他类似的概念.
 
-- `extern "C"`功能.
+- `extern "C"`函数.
 - `#[repr(C)]`结构/枚举.
 - 使数据 C 兼容.
 
@@ -216,7 +216,7 @@ Hello world 从 C
 
 <pre><code data-source="chapters/shared/code/ffi/13.rs" data-trim="hljs toml"></code></pre>
 
-<small>你看到其他的功能</small>
+<small>你早些看到函数的其他部分</small>
 
 ---
 
@@ -228,13 +228,13 @@ Hello world 从 C
 
 <small>(不,这不是一个似曾相识的)</small>
 
-C 代码需要`.h`文件包括定义防 Rust 功能.
+C 代码需要`.h`文件，在其中定义 Rust 函数.
 
-`cbindgen`是一个很好的工具来自动生成它们.
+`cbindgen`是一个很好的工具，来自动生成它们.
 
 ---
 
-但是:不是必需的,因为插件 API 通过指定 weechat !
+但是:这不是必需的,因为可通过 weechat 指定，插件 API !
 
 ---
 
@@ -248,7 +248,7 @@ C 代码需要`.h`文件包括定义防 Rust 功能.
 
 ---
 
-## 有些事情不在
+## 有些事情没有照顾到
 
 ---
 
